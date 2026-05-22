@@ -1,0 +1,11 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BLN Security Solutions shield mark">
+  <rect width="720" height="720" fill="#08111F"/>
+  <path d="M360 78L568 154V314C568 449 487 570 360 642C233 570 152 449 152 314V154L360 78Z" fill="#0E1828" stroke="#C9A45C" stroke-width="14"/>
+  <path d="M360 123L526 184V316C526 424 464 524 360 588C256 524 194 424 194 316V184L360 123Z" fill="#111D2F" stroke="#C9A45C" stroke-opacity=".45" stroke-width="4"/>
+  <path d="M254 418V292H293V386H348V418H254Z" fill="#F7F8FB"/>
+  <path d="M366 418V292H419C451 292 472 308 472 333C472 347 465 358 453 365C469 371 479 384 479 401C479 429 457 446 421 446H366V418ZM405 342H416C427 342 433 337 433 329C433 321 427 316 416 316H405V342ZM405 397H421C433 397 440 392 440 383C440 374 433 369 421 369H405V397Z" fill="#F7F8FB"/>
+  <path d="M250 486H470" stroke="#C9A45C" stroke-width="10" stroke-linecap="square"/>
+  <path d="M253 240H467" stroke="#C9A45C" stroke-opacity=".55" stroke-width="4"/>
+  <path d="M360 78V642" stroke="white" stroke-opacity=".05" stroke-width="2"/>
+  <path d="M152 314H568" stroke="white" stroke-opacity=".05" stroke-width="2"/>
+</svg>
