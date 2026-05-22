@@ -4,6 +4,8 @@
   "description": "Static website for BLN Security Solutions.",
   "private": true,
   "scripts": {
-    "test": "node --check script.js"
+    "build": "node scripts/build-static.js",
+    "preview": "node scripts/serve-static.js dist 4173",
+    "test": "node --check script.js && npm run build"
   }
 }
