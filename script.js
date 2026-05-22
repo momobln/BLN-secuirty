@@ -1,4 +1,4 @@
-// Header, mobile navigation, scroll reveal, and contact form behavior.
+// Header, mobile navigation, scroll reveal, and static contact form behavior.
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
@@ -79,31 +79,26 @@ contactForm.addEventListener("submit", async (event) => {
   formSubmit.disabled = true;
   formSubmit.textContent = "Wird gesendet...";
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(contactData),
-    });
+  const subject = `Anfrage: ${contactData.service || "BLN Security Solutions"}`;
+  const body = [
+    `Name / Firma: ${contactData.name || ""}`,
+    `Email: ${contactData.email || ""}`,
+    `Telefon: ${contactData.phone || ""}`,
+    `Leistung / Service: ${contactData.service || ""}`,
+    "",
+    "Nachricht / Message:",
+    contactData.message || "",
+  ].join("\n");
 
-    const result = await response.json();
+  const mailtoUrl = `mailto:info@bln-security-solutions.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    if (!response.ok) {
-      throw new Error(result.message || "Ihre Anfrage konnte nicht gesendet werden.");
-    }
+  window.location.href = mailtoUrl;
+  showFormMessage("success");
 
-    contactForm.reset();
-    showFormMessage("success");
+  window.setTimeout(() => {
+    showFormMessage("none");
+  }, 6000);
 
-    window.setTimeout(() => {
-      showFormMessage("none");
-    }, 6000);
-  } catch (error) {
-    showFormMessage("error", error.message || "Ihre Anfrage konnte nicht gesendet werden.");
-  } finally {
-    formSubmit.disabled = false;
-    formSubmit.textContent = "Anfrage senden";
-  }
+  formSubmit.disabled = false;
+  formSubmit.textContent = "Anfrage senden";
 });
